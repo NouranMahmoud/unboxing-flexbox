@@ -100,9 +100,9 @@ gulp.task('watch', function() {
   ], ['js']);
 });
 
-gulp.task('deploy', ['build'], function(done) {
-  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
-});
+// gulp.task('deploy', ['build'], function(done) {
+//   ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
+// });
 
 gulp.task('build', ['js', 'html', 'css', 'images']);
 
