@@ -1,26 +1,41 @@
 // Require Node modules in the browser thanks to Browserify: http://browserify.org
 var bespoke = require('bespoke'),
-  cube = require('bespoke-theme-cube'),
-  classes = require('bespoke-classes'),
+  // cube = require('bespoke-theme-cube'),
   keys = require('bespoke-keys'),
   touch = require('bespoke-touch'),
   bullets = require('bespoke-bullets'),
-  backdrop = require('bespoke-backdrop'),
   scale = require('bespoke-scale'),
+  progress = require('bespoke-progress'),
+  overview = require('bespoke-simple-overview'),
+  // search = require('bespoke-search'),
   hash = require('bespoke-hash'),
-  progress = require('bespoke-progress');
+  state = require('bespoke-state');
+  beachday = require('bespoke-theme-beachday');
 
 // Bespoke.js
 bespoke.from('article', [
-  cube(),
-  classes(),
+  beachday({ insertFonts: false }),
   keys(),
   touch(),
-  bullets('li, .bullet'),
-  backdrop(),
-  scale(),
+  state(),
+  // scale('transform'),
+  progress(),
   hash(),
-  progress()
+  overview({ insertStyles: false }),
+  bullets('.bullet'),
+  progress(),
+  function(deck) {
+    // as we're using bespoke-scale with 'transform', it creates a
+    // .bespoke-parent and wraps everything inside it, including the
+    // bespoke-progress bar
+    // to prevent it from being scaled up/down, we need to unwrap it
+    // var bar = deck.querySelector('bespoke-progress-parent');
+    // deck.parent.appendChild(bar);
+  },
+  function(deck) {
+    // makes the content visible to avoid FoUC
+    deck.parent.style.visibility = 'visible';
+  }
 ]);
 
 // Prism syntax highlighting

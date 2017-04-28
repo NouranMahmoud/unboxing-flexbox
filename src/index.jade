@@ -9,37 +9,219 @@ html
 
   body
 
-    article
+    article.transition-subtle
 
-      section
-        h1 Unboxing Flexbox
+      section.layout-title
+        h1 Unboxing 
+          strong Flexbox
 
-      section
+        h2 
+          | Nouran Mahmoud, Frontend Engineer at Cognitev
+
+      section.layout-section-header
         h2 Outlines
-        //- h3.bullet
-        ul
-          li Why Flexbox is a Life-saver
-          li Flex Layout Box Model and Terminology
-          li Responsive Design with Flexbox
-          li Flex Browsers Support
-          li Flex Outdated Stuff.
-          li Flexbox USE CASES
+        
+        .content
+          ul
+            li Why Flexbox is a Life-saver
+            li Flex Browsers Support
+            li Flex Outdated Stuff.
+            li Flex Layout Box Model and Terminology
+            li Responsive Design with Flexbox
+            li Flexbox USE CASES
+
+      section.layout-main-point(data-bespoke-state='layout-main-point')
+        h1.bullet Why Flexbox is a Life-saver
+
+      section.layout-regular
+        h3.bullet Once upon a time...
+        img(src="/images/onceUponAtime.gif")
+      
+      section
+        h3.bullet Box Acid Test
+        img(src="/images/box-acid-text.png")
 
       section
-        //- h2
+        h3.bullet Float Main Purpose
+        img(src="/images/float-answer.png")
+      
+      section
+        p.bullet <strong>**CSS**</strong> is a language for describing the rendering of structured documents (such as HTML and XML) on screen, on paper, in speech, etc. - <a href="http://w3.org">CSS working group w3.org</a>
+        p.bullet CSS Levels 1 and 2 allowed for the <strong>alignment of text</strong> via <strong>text-align</strong> and the <strong>alignment of blocks</strong> by balancing <strong>auto margins</strong>.
+
+      section
+        img(src="/images/css.gif", style="width:300px;height:300px")
+
+      section
+        h2.bullet CSS Four layout mode
+        
+        ul  
+          li <strong>block layout</strong> for laying out documents
+          li <strong>inline layout</strong> for laying out text
+          li <strong>table layout</strong> for laying 2D tabular data
+          li <strong>positioned layout</strong> (floot, relative, absolute ..)
+
+      section
+        h3 Problems with CSS 2 layout
+        ul
+          li Float containment 
+          li Wrapping hard to control 
+          li Difficulty making boxes equal height 
+          li Difficulty doing vertical centering 
+          li Difficulty mixing units of measurement 
+          li Visual location still tied to HTML order 5
+
+      section
+        h2.bullet CSS3 two new layout methods
+
+        ul
+          li <strong>Grid layout</strong> divides space into columns & rows. Like table layouts, but better!.
+          li <strong>Flexbox layout</strong> distributes space along a single column or row. Like float layouts, but better!.
+          li Flexbox and Grid were created explicitly to replace float and table layout hacks.
+          li <a href="https://github.com/tabatkins">Tab Atkins Jr.</a>, author of the Flexbox and Grid specs
+
+      section
+        h3  Flexbox solves a lot of those issues
+        ul
+          li Make boxes automatically grow to fill space or shrink to avoid overflow 
+          li Give boxes proportional measurements 
+          li Lay out boxes in any direction 
+          li Align boxes on any side
+          li Place boxes out of order from HTML
+
+      section.layout-main-point(data-bespoke-state='layout-main-point')
+        h1.bullet Flex browsers support
+        img(src="/images/browser-support.gif")
+
+      section
+        h3 3 Flexbox Specs and Outdated Stuff.
+        ul
+          li <strong>The old 2009</strong> spec — display: box — is no longer relevant.
+          li <strong>The 2011 "tweener"</strong> spec — display: flexbox — was a draft spec, only implemented in IE10. You should avoid it if possible.
+          li <strong>The final 2012</strong> spec — display: flex — is the new hotness, with excellent browser support (see following image).
+
+        p.bullet > If you see anything other than display:flex, it’s an older article and can be ignored.
+
+      section
+        ul
+          li Is supported by (almost) all modern browsers
+          li Firefox 28+
+          li Chrome 29+
+          li Internet Explorer 11+ (IE10 also supports Flexbox, but uses the tweener spec (display:flexbox).)
+          li Opera 17+
+          li Safari 6.1+ requires -webkit prefix
+
+      section
+        h3.bullet <a href="http://caniuse.com/">Can I Use</a>
+        img.bullet(src="/images/caniuse.png", style="height:400px;width:100%")
+
+      section
+        h2 What About Older IE Versions? WHO CARES?
+        img.bullet(src="/images/disaster-girl.jpg")
+
+      section.layout-2-column-content
+        div.bullet(style="width:400px")
+          h3 MODERNIZR
+          p a feature detection tool, allows us to detect if a browser supports flexbox (legacy and current)
+          pre
+            code.language-css.
+              .no-flexbox.no-flexboxlegacy {
+                /* fallback */
+              }
+
+        div.bullet(style="width:500px;margin-left: 100px;") 
+          h3 AUTOPREFIXER 
+            span(style="font-size:16px") (Vendor Prefixes)
+          p If you need to support all these older implementations, you’ll need a host of <code>*-box</code>, <code>*-flexbox</code>, and <code>*-flex</code> prefixes.
+          p(style="font-size:16px") Plugins : Grunt, Gulp, Webpack, Less, Stylus, Rails
+          pre
+            code.language-css.
+              .container {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+              }
+
+      section.layout-main-point(data-bespoke-state='layout-main-point')
+        h1 Flex Layout Box Model and Terminology
+        p (Flex container, flex items)
+        img(src="/images/bubbles.gif")
+
+      section
+        h2 Flexbox Concepts
+        ul
+          li One level deep - a flex line (parent, child)
+          li <code>display: flex | inline-flex</code> (outer and inner layout of parent)
+          li Possiblility to change the direction of the flex line (<code>row, column</code>).
+          li The main axis of a flex container is the primary axis along which flex items are laid out.
+          li Floats do not intrude into the flex container
+          li Flex container’s margins do not collapse with the margins of its contents
+
+      section
+        h2 Main Axis, Cros Axis
+        img(src="/images/axis.png")
+        p(style="font-size:16px") Figure from <a href="https://dev.opera.com/articles/flexbox-basics/">this article</a>
+      section
+        h2 Single Line of Flex
+        
         pre
-          code.language-javascript.
-            bespoke.from('article', [
-              classes(),
-              keys(),
-              touch(),
-              bullets('li, .bullet')
-            ]);
+          code.language-css.
+            .flex-container {
+                display: flex;
+            }
+        img(src="/images/clap.gif")
+      
+      section
+        h3 That one line of code does all the following
+        ul
+          li Treats <code>.flex-container</code> as a flex container.
+          li Treats all direct children of <code>.flex-container</code> as flex items.
+          li Flex items will be laid out in a horizontal line (<code>flex-direction:row</code>).
+          li Flex items will be laid out in source order(<code>order: 0</code>).
+          li Flex items will be laid out starting from the left side of the flex container(<code>justify-content:flex-start</code>).
+          li Flex items will be sized based on their regular width properties(<code>width: auto;</code>).
+          li If there’s not enough space for all the flex items, they will be allowed to shrink horizontally until they all fit(<code>flex-shrink:1</code>).
+          li If they need to shrink, each item will shrink equally(<code>flex-shrink:1</code>).
+          li Flex items will all stretch vertically to match the height of the tallest flex item(<code>align-items:stretch</code>).
 
-      section(data-bespoke-hash='named-route')
-        h2 second slide
+          div.demo
+            a(href="http://the-echoplex.net/flexyboxes/?fixed-height=on&display=flex&flex-direction=row&flex-wrap=nowrap&justify-content=flex-start&align-items=stretch&align-content=stretch&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto") Show Example
 
-      section.emphatic-text(data-bespoke-backdrop='emphatic')
-        h2 Emphatic Slide!
+      section(data-bespoke-state='emphatic')
+        h2 Start Playing with Flexbox
+        a(href="http://the-echoplex.net/flexyboxes/?fixed-height=on&display=flex&flex-direction=row&flex-wrap=wrap&justify-content=center&align-items=stretch&align-content=stretch&order%5B%5D=0&flex-grow%5B%5D=1&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=1&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=1&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=1&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=1&flex-grow%5B%5D=1&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=1&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto") Click here!
+
+        p
+          a(href="https://flexboxfroggy.com/") Froggy Game
+      
+      section.layout-main-point(data-bespoke-state='layout-main-point')
+        h1  Responsive Design with Flexbox
+        img(src="/images/responsive.gif")
+
+      section.layout-2-column-content
+        div.bullet
+          p <strong>Space</strong> <br/> Make better use of the space at all screen sizes
+          ul
+            li flex (flex-grow flex-shrink flex-basis)
+            li justify-content: space-between/space-around
+        
+        div.bullet(style="width:100%")
+          p <strong>Placement</strong> <br/> Re-order content at different screen sizes
+          ul
+            li order
+            li flex-direction
+
+      section
+        p.bullet No need for <code>width:100%</code>, use <code>flex: 1 1 100%</code> instead.
+        p.bullet Combining units of measurement across a line can make RWD tricky. ems + % + px + [blank] = ???
+        p.bullet Defining the flex property Makes flex items change their main size (width or height) to fit available space
+      
+      section
+        h1 USE CASES
+
+      section
+        h1.bullet Thank you <span class='bullet'>:)</span>
+        img(src='http://i.imgur.com/xmBjXcm.gif')
 
     script(src='build/build.js')
