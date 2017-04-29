@@ -16,12 +16,12 @@ html
           strong Flexbox
 
         h2 
-          | Nouran Mahmoud, Frontend Engineer at Cognitev
+          | <a href="https://twitter.com/NouranMhmoud" class="author">Nouran Mahmoud</a>, Frontend Engineer at <b>Cognitev</b>
 
       section.layout-section-header
-        h2 Outlines
+        h2(style="height:auto;width:auto;background-color:white;margin-bottom:40px") Outlines
         
-        .content
+        .content(style="width:auto")
           ul
             li Why Flexbox is a Life-saver
             li Flex Browsers Support
@@ -38,12 +38,20 @@ html
         img(src="/images/onceUponAtime.gif")
       
       section
-        h3.bullet Box Acid Test
-        img(src="/images/box-acid-text.png")
+        h3 Hakon Wium Lie
+        img(src="/images/hackon.png" style="width:25%; height:80%")
+
+      section
+        h3 Eric Meyer
+        img(src="/images/eric.png", style="width:40%; height:80%")
+      
+      section
+        h3.bullet Box Acid Test By Todd Fahrner
+        img(src="/images/box-acid-text.png", style="width:70%; height:80%")
 
       section
         h3.bullet Float Main Purpose
-        img(src="/images/float-answer.png")
+        img(src="/images/float-answer.png", style="width:70%; height:80%")
       
       section
         p.bullet <strong>**CSS**</strong> is a language for describing the rendering of structured documents (such as HTML and XML) on screen, on paper, in speech, etc. - <a href="http://w3.org">CSS working group w3.org</a>
@@ -69,7 +77,7 @@ html
           li Difficulty making boxes equal height 
           li Difficulty doing vertical centering 
           li Difficulty mixing units of measurement 
-          li Visual location still tied to HTML order 5
+          li Visual location still tied to HTML order
 
       section
         h2.bullet CSS3 two new layout methods
@@ -116,7 +124,7 @@ html
         img.bullet(src="/images/caniuse.png", style="height:400px;width:100%")
 
       section
-        h2 What About Older IE Versions? WHO CARES?
+        h2 What About Older <b>IE Versions</b>? WHO CARES?
         img.bullet(src="/images/disaster-girl.jpg")
 
       section.layout-2-column-content
@@ -151,17 +159,41 @@ html
       section
         h2 Flexbox Concepts
         ul
-          li One level deep - a flex line (parent, child)
+          li <b>One level deep</b> - a flex line (parent, child)
           li <code>display: flex | inline-flex</code> (outer and inner layout of parent)
-          li Possiblility to change the direction of the flex line (<code>row, column</code>).
+          li Possiblility to <b>change the direction</b> of the flex line (<code>row, column</code>).
           li The main axis of a flex container is the primary axis along which flex items are laid out.
-          li Floats do not intrude into the flex container
-          li Flex container’s margins do not collapse with the margins of its contents
+          li <b>Floats do not intrude</b> into the flex container
+          li Flex container’s <b>margins do not collapse</b> with the margins of its contents
 
+      section
+        h3 One level deep
+        img(src="/images/one-level.png")
+        
       section
         h2 Main Axis, Cros Axis
         img(src="/images/axis.png")
         p(style="font-size:16px") Figure from <a href="https://dev.opera.com/articles/flexbox-basics/">this article</a>
+      
+      section
+        h3.bullet The Flex Container Properties
+
+        ul.bullet
+          li Flex-direction
+          li Flex-wrap
+          li Flex-flow
+          li Justify-content
+          li Align-items
+          li Align-content
+
+      section
+        h3.bullet The Flex Item Properties
+        ul.bullet
+          li Order 
+          li Flex-grow 
+          li Flex-shrink 
+          li Flex-basis
+
       section
         h2 Single Line of Flex
         
@@ -172,6 +204,11 @@ html
             }
         img(src="/images/clap.gif")
       
+      section
+        h3 display: flex
+        img(src="/images/flex.png", style="width:70%; height:30%")
+        h3(style="margin-top:40px") display: inline-flex
+        img(src="/images/inline-flex.png", style="width:70%; height:30%")
       section
         h3 That one line of code does all the following
         ul
@@ -187,6 +224,19 @@ html
 
           div.demo
             a(href="http://the-echoplex.net/flexyboxes/?fixed-height=on&display=flex&flex-direction=row&flex-wrap=nowrap&justify-content=flex-start&align-items=stretch&align-content=stretch&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto&order%5B%5D=0&flex-grow%5B%5D=0&flex-shrink%5B%5D=1&flex-basis%5B%5D=auto&align-self%5B%5D=auto") Show Example
+
+      section
+        h3 justify-content
+        img(src="/images/flexbox-justify.png")
+
+      section
+        h3 flex-wrap
+        img(src="/images/flexbox-wrap.png")
+
+      section
+        h3 order
+        img(src="/images/flexbox-order.png")   
+
 
       section(data-bespoke-state='emphatic')
         h2 Start Playing with Flexbox
@@ -205,6 +255,8 @@ html
           ul
             li flex (flex-grow flex-shrink flex-basis)
             li justify-content: space-between/space-around
+            li align-items
+            li align-content
         
         div.bullet(style="width:100%")
           p <strong>Placement</strong> <br/> Re-order content at different screen sizes
@@ -221,8 +273,8 @@ html
         h1 USE CASES
 
       section
-        h2 sloved by flexbox
-        img(src="/images/showcases.png")
+        h2 solved by flexbox
+        img(src="/images/showcases.png", style="width:70%; height:80%")
       section
         h1.bullet Thank you <span class='bullet'>:)</span>
         img(src='http://i.imgur.com/xmBjXcm.gif')
